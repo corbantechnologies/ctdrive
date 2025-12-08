@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,9 +26,7 @@ export function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="text-2xl font-bold text-[#ff5f16]">
-              CT Drive
-            </div>
+            <Image src="/logo2SmNoBg.png" alt="CT Drive" width={80} height={80} />
           </Link>
 
           {/* Desktop Navigation */}

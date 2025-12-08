@@ -1,7 +1,7 @@
-// components/Footer.tsx
 import Link from "next/link";
 import { Phone, Mail, MapPin, } from "lucide-react";
 import { Separator } from "../ui/separator";
+import Image from "next/image";
 
 export function Footer() {
   const phone = "+254 700 000 000"; // ← Your real number
@@ -14,8 +14,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <h3 className="text-3xl font-bold text-[#ff5f16] mb-4">CT Drive</h3>
-            <p className="text-gray-400">
+            <Image src="/logo2SmNoBg.png" alt="CT Drive" width={150} height={150} />
+            <p className="text-gray-400 mt-4">
               Your trusted car hire partner across Kenya.<br />
               Available 24/7 • Instant booking • Best rates
             </p>
