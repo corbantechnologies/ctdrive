@@ -7,7 +7,7 @@ import { Phone, Menu, X } from "lucide-react";
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const phoneNumber = "254700000000"; // ← Change to your real number
+  const phoneNumber = "254710584581"; // ← Change to your real number
   const waLink = `https://wa.me/${phoneNumber}`;
 
   const navItems = [

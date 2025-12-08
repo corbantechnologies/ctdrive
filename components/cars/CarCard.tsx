@@ -42,7 +42,7 @@ export function CarCard({ car }: { car: Car }) {
           </div>
           <Button asChild className="bg-[#ff5f16] hover:bg-[#e04e14]">
             <a
-              href={`https://wa.me/254700000000?text=${encodeURIComponent(waMessage)}`}
+              href={`https://wa.me/254710584581?text=${encodeURIComponent(waMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
             >

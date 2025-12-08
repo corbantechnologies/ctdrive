@@ -8,7 +8,7 @@ export const metadata = {
   description: "Current festive season rates. Self-drive from KSh 3,500/day. Airport transfers, SUVs, vans, long-term discounts.",
 };
 
-const phoneNumber = "254700000000";
+const phoneNumber = "254710584581";
 
 export default function PricingPage() {
   return (

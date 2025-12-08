@@ -14,7 +14,7 @@ export const metadata = {
 const popularCars = cars.filter((car) => car.popular);
 
 export default function CarsPage() {
-  const phoneNumber = "254700000000"; // ← Change to your real number
+  const phoneNumber = "254710584581"; // ← Change to your real number
 
   return (
     <>

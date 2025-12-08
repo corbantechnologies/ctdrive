@@ -36,7 +36,7 @@ export default function Home() {
               size="lg"
               className="bg-[#ff5f16] hover:bg-[#e04e14] text-white text-lg px-10 py-7 shadow-xl"
             >
-              <a href="https://wa.me/254700000000?text=Hi%20CT%20Drive!%20I%20need%20a%20car%20this%20festive%20season.%20Please%20send%20available%20options.">
+              <a href="https://wa.me/254710584581?text=Hi%20CT%20Drive!%20I%20need%20a%20car%20this%20festive%20season.%20Please%20send%20available%20options.">
                 <Phone className="mr-3 h-6 w-6" />
                 Get Instant Quote on WhatsApp
               </a>
@@ -135,7 +135,7 @@ export default function Home() {
             size="lg"
             className="bg-white text-[#ff5f16] hover:bg-gray-100 text-xl px-16 py-8 font-bold shadow-2xl"
           >
-            <a href="https://wa.me/254700000000?text=Hi%20CT%20Drive!%20Please%20send%20me%20available%20cars%20for%20the%20festive%20season">
+            <a href="https://wa.me/254710584581?text=Hi%20CT%20Drive!%20Please%20send%20me%20available%20cars%20for%20the%20festive%20season">
               <Phone className="mr-4 h-7 w-7" />
               Chat on WhatsApp Now
             </a>
@@ -145,7 +145,7 @@ export default function Home() {
 
       {/* Floating Button */}
       {/* <WhatsAppFloatingButton
-        phoneNumber="254700000000" // ← Change to your real number
+        phoneNumber="254710584581" // ← Change to your real number
         message="Hi CT Drive! I'm looking for a car this festive season. Please send available options and prices."
       /> */}
     </>

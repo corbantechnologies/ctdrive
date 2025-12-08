@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
-  const phoneNumber = "254700000000"; // ← Change to your real number
+  const phoneNumber = "254710584581"; // ← Change to your real number
 
   return (
     <>
