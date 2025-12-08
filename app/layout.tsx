@@ -111,7 +111,7 @@ export default function RootLayout({
               sameAs: [
                 "https://facebook.com/ctdrive",
                 "https://instagram.com/ctdrive_ke",
-                "https://wa.me/254700000000",
+                "https://wa.me/254710584581",
               ],
             }),
           }}
@@ -124,7 +124,7 @@ export default function RootLayout({
         <Footer />
         {/* Floating WhatsApp Button - This gets you bookings! */}
         <WhatsAppFloatingButton
-          phoneNumber="254700000000" // Replace with your real number (no +)
+          phoneNumber="254710584581" // Replace with your real number (no +)
           message="Hi CT Drive! I'd like to book a car for Mombasa. Please send available options and prices"
         />
       </body>

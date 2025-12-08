@@ -6,7 +6,7 @@ import { Separator } from "../ui/separator";
 export function Footer() {
   const phone = "+254 700 000 000"; // ← Your real number
   const email = "info@corbantechnologies.org";
-  const waNumber = "254700000000";
+  const waNumber = "254710584581";
 
   return (
     <footer className="bg-gray-900 text-white py-16">
