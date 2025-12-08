@@ -7,11 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Mail, MapPin, MessageCircle, CheckCircle } from "lucide-react";
 
-// export const metadata = {
-//   title: "Contact Us - CT Drive Kenya | 24/7 Support",
-//   description: "Get in touch anytime. WhatsApp, call, or email us. We reply in minutes.",
-// };
-
 const phoneNumber = "254710584581";
 const waLink = `https://wa.me/${phoneNumber}`;
 const email = "info@corbantechnologies.org";
@@ -25,7 +20,8 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
     try {
       const response = await fetch("https://formspree.io/f/mblnaaod", {
@@ -36,11 +32,12 @@ export default function ContactPage() {
 
       if (response.ok) {
         setSubmitStatus("success");
-        e.currentTarget.reset();
+        form.reset(); // ← Now safe because form is always in DOM
       } else {
         setSubmitStatus("error");
       }
     } catch (err) {
+      console.error("Error submitting form:", err);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -129,8 +126,12 @@ export default function ContactPage() {
             <div>
               <h2 className="text-4xl font-bold mb-8">Send Us a Message</h2>
 
-              {submitStatus === "success" && (
-                <div className="mb-8 p-8 bg-green-50 border-2 border-green-200 rounded-2xl text-center">
+              {/* Success Message */}
+              <div
+                className={`mb-8 transition-all duration-500 ${submitStatus === "success" ? "block" : "hidden"}`}
+                aria-hidden={submitStatus !== "success"}
+              >
+                <div className="p-8 bg-green-50 border-2 border-green-200 rounded-2xl text-center">
                   <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-green-800 mb-2">
                     Thank You! Message Sent Successfully
@@ -139,33 +140,65 @@ export default function ContactPage() {
                     We’ll reply on WhatsApp or call you in under 10 minutes!
                   </p>
                 </div>
-              )}
+              </div>
 
-              {submitStatus === "error" && (
-                <div className="mb-8 p-8 bg-red-50 border-2 border-red-200 rounded-2xl text-center">
+              {/* Error Message */}
+              <div
+                className={`mb-8 transition-all duration-500 ${submitStatus === "error" ? "block" : "hidden"}`}
+                aria-hidden={submitStatus !== "error"}
+              >
+                <div className="p-8 bg-red-50 border-2 border-red-200 rounded-2xl text-center">
                   <p className="text-red-700 font-medium">
                     Oops! Something went wrong. Please try WhatsApp instead.
                   </p>
                 </div>
-              )}
+              </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <input type="text" name="name" placeholder="Your Name" required disabled={isSubmitting}
-                  className="w-full px-5 py-4 rounded-lg border border-gray-300 focus:border-[#ff5f16] focus:outline-none transition disabled:opacity-70" />
-                <input type="tel" name="phone" placeholder="Your Phone Number (e.g. 0710584581)" required disabled={isSubmitting}
-                  className="w-full px-5 py-4 rounded-lg border border-gray-300 focus:border-[#ff5f16] focus:outline-none transition disabled:opacity-70" />
-                <input type="email" name="email" placeholder="Your Email (optional)" disabled={isSubmitting}
-                  className="w-full px-5 py-4 rounded-lg border border-gray-300 focus:border-[#ff5f16] focus:outline-none transition disabled:opacity-70" />
-                <textarea name="message" rows={5} placeholder="Tell us your dates, number of people, and preferred car..." required disabled={isSubmitting}
-                  className="w-full px-5 py-4 rounded-lg border border-gray-300 focus:border-[#ff5f16] focus:outline-none transition resize-none disabled:opacity-70" />
-                <Button type="submit" size="lg" disabled={isSubmitting}
-                  className="w-full bg-[#ff5f16] hover:bg-[#e04e14] text-lg py-7 disabled:opacity-70">
+              {/* Form — always mounted */}
+              <form onSubmit={handleSubmit} className={`space-y-6 ${submitStatus === "success" ? "opacity-50" : ""}`}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  disabled={isSubmitting || submitStatus === "success"}
+                  className="w-full px-5 py-4 rounded-lg border border-gray-300 focus:border-[#ff5f16] focus:outline-none transition disabled:opacity-70"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Your Phone Number (e.g. 0710584581)"
+                  required
+                  disabled={isSubmitting || submitStatus === "success"}
+                  className="w-full px-5 py-4 rounded-lg border border-gray-300 focus:border-[#ff5f16] focus:outline-none transition disabled:opacity-70"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email (optional)"
+                  disabled={isSubmitting || submitStatus === "success"}
+                  className="w-full px-5 py-4 rounded-lg border border-gray-300 focus:border-[#ff5f16] focus:outline-none transition disabled:opacity-70"
+                />
+                <textarea
+                  name="message"
+                  rows={5}
+                  placeholder="Tell us your dates, number of people, and preferred car..."
+                  required
+                  disabled={isSubmitting || submitStatus === "success"}
+                  className="w-full px-5 py-4 rounded-lg border border-gray-300 focus:border-[#ff5f16] focus:outline-none transition resize-none disabled:opacity-70"
+                />
+                <Button
+                  type="submit"
+                  size="lg"
+                  disabled={isSubmitting || submitStatus === "success"}
+                  className="w-full bg-[#ff5f16] hover:bg-[#e04e14] text-lg py-7 disabled:opacity-70"
+                >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </div>
 
-            {/* Image Placeholder */}
+            {/* Image */}
             <div>
               <h2 className="text-4xl font-bold mb-8">We’re Here for You</h2>
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-96 lg:h-full min-h-96">
