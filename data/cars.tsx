@@ -15,6 +15,18 @@ export type Car = {
 
 export const cars: Car[] = [
   {
+    id: "demio-01",
+    model: "Mazda Demio",
+    type: "sedan",
+    seats: 5,
+    pricePerDay: 3500,
+    transmission: "auto",
+    fuel: "petrol",
+    popular: true,
+    locations: ["Mombasa", "Nairobi", "Diani", "Malindi", "Watamu"],
+    image: "/cars/demio.jpg",
+  },
+  {
     id: "vitz-01",
     model: "Toyota Vitz",
     type: "sedan",
@@ -36,7 +48,7 @@ export const cars: Car[] = [
     fuel: "petrol",
     popular: true,
     locations: ["Mombasa", "Nairobi", "Kisumu"],
-    image: "/cars/vitz.jpg",
+    image: "/cars/premio.jpg",
   },
   {
     id: "prado-01",
@@ -49,7 +61,7 @@ export const cars: Car[] = [
     fuel: "diesel",
     popular: true,
     locations: ["Mombasa", "Nairobi", "Malindi", "Watamu"],
-    image: "/cars/vitz.jpg",
+    image: "/cars/prado.jpg",
     features: ["4x4", "Sunroof", "Leather"],
   },
   {
@@ -62,7 +74,7 @@ export const cars: Car[] = [
     fuel: "petrol",
     popular: false,
     locations: ["Mombasa", "Diani", "Ukunda"],
-    image: "/cars/vitz.jpg",
+    image: "/cars/noah.jpg",
   },
   {
     id: "rosa-01",
@@ -74,7 +86,19 @@ export const cars: Car[] = [
     fuel: "diesel",
     popular: false,
     locations: ["Mombasa", "Nairobi"],
-    image: "/cars/vitz.jpg",
+    image: "/cars/rosa.jpg",
+  },
+  {
+    id: "axio-01",
+    model: "Toyota Axio",
+    type: "sedan",
+    seats: 4,
+    pricePerDay: 3750,
+    transmission: "auto",
+    fuel: "petrol",
+    popular: true,
+    locations: ["Mombasa", "Nairobi", "Kisumu"],
+    image: "/cars/axio.jpg",
   },
   // Add 15–20 more cars here as you grow...
 ];
