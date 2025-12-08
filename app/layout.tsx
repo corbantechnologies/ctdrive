@@ -3,6 +3,7 @@ import "./globals.css";
 import { WhatsAppFloatingButton } from "@/components/landing/WhatsAppFloatingButton";
 import { Navbar } from "@/components/landing/Navbar";
 import { Footer } from "@/components/landing/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: {
@@ -122,6 +123,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Analytics />
         {/* Floating WhatsApp Button - This gets you bookings! */}
         <WhatsAppFloatingButton
           phoneNumber="254710584581" // Replace with your real number (no +)
