@@ -4,7 +4,7 @@ import { Separator } from "../ui/separator";
 import Image from "next/image";
 
 export function Footer() {
-  const phone = "+254 700 000 000"; // ← Your real number
+  const phone = "+254 710 584 581"; // ← Your real number
   const email = "info@corbantechnologies.org";
   const waNumber = "254710584581";
 
